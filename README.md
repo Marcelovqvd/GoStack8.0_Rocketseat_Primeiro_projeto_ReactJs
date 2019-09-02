@@ -95,31 +95,63 @@ $ yarn start
 
 ## Roteamento no React
 
-Para fazer roteamento no front end da aplicação
+Navegar entre páginas via URL sem precisar recarrega-la totalmente. isso é SPA
+Para fazer roteamento no front end da aplicação, instalar:
 
 \$ yarn add react-router-dom
 
 Em src criar arquivo routes.js
 
-criar pasta pages na raiz do projeto e nela a pasta main com index.js dentro
+criar pasta pages na raiz do projeto e nela as pastas Main e Repository, ambas com o arquivo index.js dentro.
+Os arquivos index.js vão ser componentes.
 
-criar pasta Repository na raiz do projeto e nela também index.js dentro
-
-Criar componentes nos index das pasta main e repository
+- /src/pages/Main/index.js
+- /src/pages/Repository/index.js
 
 ---- com o snnipet da rockeseat é só digitar rfc para fazer um componente
 
 #### routes.js
 
-Fazer imports em router.js
+Instalar react-router-dom. Este vai
 
-em routes.js vai exportar por default um componente chamado Routes, cujo retorno vão ser as rotas (cada rota vai ser um componente)
+    $ yarn add react-router-dom
 
-O Switch vai garantir q uma rota seja chamada por vez.
+Criar o arquivo /src/routes.js
 
-Dentro do Switch, cada Route representa uma página da aplicação.
+#### em routes.js
+
+Importar BrowserRouter, Switch e Route do react-router-dom.
+
+- BrowserRouter é um roteador e permite navegar entre as pages. As rotas ficam na URL.
+
+- Switch garante que apenas uma rota seja chamada por vez (não várias ao mesmo tempo) pois o react-router-dom permite que sejam chamados mais de um componente ao mesmo tempo.
+
+- Route - cada Route repreenta uma página da aplicação
+
+Exportar componente Routes() cujo retorno são as rotas
+
+Exportar por default um componente chamado Routes, cujo retorno vão ser as rotas (cada rota vai ser um componente)
+
+Para path="/repository" chamar component={Repository}. aqui, o Repository é variável e por isso, deve ser colocada entre chaves.
+
+Quando o usuário acessar a rota raiz, vai acessar a rota Main
 
 Importar o componente de rotas no App.js, que é o componente raiz da aplicação.
+
+localhost:3000 -> rota rais, página Main
+localhost:3000/repository -> página Repository
+
+O react-router-dom não procura por uma igualdade entre o path e a URL que o usuário digitou. Ele procura se a URL digitada no browser começa com o path "/" e a URL repository também começa com a barra "/". Então ele pararia na primeira rota que encontrar. Então deve-se usar o 'exact'
+
+    <Route path="/" exact component={Main} />
+
+Então, em Route path="/" usar "exact" para que essa rota só seja chamada quando se estiver extamente no caminho e não quando apenas começar a URL com "/".
+
+criar
+
+- src/Main/index.js
+
+- src/Repository/index.js
 
 yarn start para rodar o server
 
