@@ -1,4 +1,4 @@
-# Bootcamp Rocketseat modulo05
+# Bootcamp Rocketseat projetoReactJS
 
 ## Projeto com React
 
@@ -158,3 +158,45 @@ yarn start para rodar o server
 aqui Main já deve aparecer em localhost:3000
 
 e Repository aparecer em localhost:3000/repository
+
+# Styled Components
+
+Configurar biblioteca Styled Components
+
+    $ yarn add styled-components
+
+Vai mudar a forma de como se escreve CSS. Com essa biblioteca o CSS de um componente não vai ser compartilhado com outros componentes, a não ser quer se queira.
+
+instalar vscode-style-components no VSCode
+
+Criar styles.js e nele importar styled from 'styled-components'.
+
+Toda estilização vai ser escrita em formato javascript, mas utilizando sintaxe CSS.
+
+Pode fazer encadeamento de estilos como SASS
+
+5`27`` props - para usar variáveis no CSS
+
+Controle de propriedades CSS baseado em propriedades que o componente recebe. Acessa propriedades do componente.
+
+# Estilos Globais
+
+styles/global.js
+
+importa a propriedade createGlobalStyled
+
+Aqui o CSS aqui vai ser compartilhado com toda aplicação
+
+#### antialised
+
+usar !important
+
+Propriedade antialised deixa as fontes mais definidas.
+
+em App.js usar o componente GlobalStyle
+
+    import GlobalStyle from './styles/global'
+
+#### fragments
+
+Usar fragments <> </>. É usado para encapsular elementos sem produzir resultados na árvore de elementos
