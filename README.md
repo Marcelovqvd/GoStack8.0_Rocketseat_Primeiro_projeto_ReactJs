@@ -118,8 +118,6 @@ Instalar react-router-dom. Este vai
 
 Criar o arquivo /src/routes.js
 
-#### em routes.js
-
 Importar BrowserRouter, Switch e Route do react-router-dom.
 
 - BrowserRouter é um roteador e permite navegar entre as pages. As rotas ficam na URL.
@@ -167,14 +165,15 @@ Configurar biblioteca Styled Components
 
 Vai mudar a forma de como se escreve CSS. Com essa biblioteca o CSS de um componente não vai ser compartilhado com outros componentes, a não ser quer se queira.
 
-instalar vscode-style-components no VSCode
+instalar vscode-styled-components no VSCode para que se entenda sintaxe CSS dentro do arquivo Javascript.
 
 Criar styles.js e nele importar styled from 'styled-components'.
 
 Toda estilização vai ser escrita em formato javascript, mas utilizando sintaxe CSS.
 
-Pode fazer encadeamento de estilos como SASS
+Pode fazer encadeamento de estilos como SASS, para estilizar tags dentro de tags ex. tag small dentro da Title.
 
+É possível também acessar propriedades do componente como no exemplo da aula, no caso de error. Pde escolher a cor no styles se error for true.
 5`27`` props - para usar variáveis no CSS
 
 Controle de propriedades CSS baseado em propriedades que o componente recebe. Acessa propriedades do componente.
