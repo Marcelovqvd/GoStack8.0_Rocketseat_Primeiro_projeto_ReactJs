@@ -174,15 +174,18 @@ Toda estilização vai ser escrita em formato javascript, mas utilizando sintaxe
 Pode fazer encadeamento de estilos como SASS, para estilizar tags dentro de tags ex. tag small dentro da Title.
 
 É possível também acessar propriedades do componente como no exemplo da aula, no caso de error. Pde escolher a cor no styles se error for true.
+
 5`27`` props - para usar variáveis no CSS
 
 Controle de propriedades CSS baseado em propriedades que o componente recebe. Acessa propriedades do componente.
 
 # Estilos Globais
 
-styles/global.js
+Estilos compartilhados na aplicação
 
-importa a propriedade createGlobalStyled
+Criar src/styles/global.js
+
+importa a propriedade createGlobalStyle
 
 Aqui o CSS aqui vai ser compartilhado com toda aplicação
 
@@ -190,7 +193,7 @@ Aqui o CSS aqui vai ser compartilhado com toda aplicação
 
 usar !important
 
-Propriedade antialised deixa as fontes mais definidas.
+Propriedade antialised deixa as fontes mais definidas (usar !important)
 
 em App.js usar o componente GlobalStyle
 
