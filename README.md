@@ -199,4 +199,4 @@ em App.js usar o componente GlobalStyle
 
 #### fragments
 
-Usar fragments <> </>. É usado para encapsular elementos sem produzir resultados na árvore de elementos
+Usar tags vazias - fragments <> </>. É usado para encapsular elementos sem produzir resultados na árvore de elementos
