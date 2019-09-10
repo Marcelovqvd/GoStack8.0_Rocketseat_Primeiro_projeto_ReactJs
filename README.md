@@ -215,10 +215,14 @@ Criar componente estilizado <Container> que vai permitir fazer alguns alinhament
 
 Para colocar ícone do Github instalar react-icons que vem com pacote de fontes e ícones
 
-\$ yarn add react-icons
+    $ yarn add react-icons
 
 Quando o estilo tiver mais de 2 níveis de encadeamento deve-se criar um componente estilizado.
 
 O botão SubmitButton vai ter seu estilo modificado baseado em algumas propriedades por ex. enquanto a reuisição estiver sendo feita, o botão fica apagado (propriedade: disabled)
 
-9`45`` passar propriedades pelo CSS
+9`45`` #### Passar propriedades pelo CSS
+
+No exemplo em vez de passar type="text" do SubmitButton na própria tag, pode passar por dentro do estilo.
+
+Em pages/Main/styles.js, em SubmitButton -> attrs({})
