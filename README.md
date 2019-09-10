@@ -202,3 +202,23 @@ em App.js usar o componente GlobalStyle
 #### fragments
 
 Usar tags vazias - fragments <> </>. É usado para encapsular elementos sem produzir resultados na árvore de elementos
+
+## Estilizando a página Main
+
+Este projeto visa desenvolver uma aplicação que se conecta com a API Rest do Github para consumir informações que são os repositórios. O usuário poderá informar repositórios do github e a aplicação salavrá esses repositórios e poderá mostrar informações sobre eles.
+
+Para isso é preciso criar um fromulário para que o usuário possa adicionar repositórios e uma listagem de repositórios.
+
+Em pages/Main/index.js
+
+Criar componente estilizado <Container> que vai permitir fazer alguns alinhamentos
+
+Para colocar ícone do Github instalar react-icons que vem com pacote de fontes e ícones
+
+\$ yarn add react-icons
+
+Quando o estilo tiver mais de 2 níveis de encadeamento deve-se criar um componente estilizado.
+
+O botão SubmitButton vai ter seu estilo modificado baseado em algumas propriedades por ex. enquanto a reuisição estiver sendo feita, o botão fica apagado (propriedade: disabled)
+
+9`45`` passar propriedades pelo CSS
