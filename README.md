@@ -221,8 +221,10 @@ Quando o estilo tiver mais de 2 níveis de encadeamento deve-se criar um compone
 
 O botão SubmitButton vai ter seu estilo modificado baseado em algumas propriedades por ex. enquanto a reuisição estiver sendo feita, o botão fica apagado (propriedade: disabled)
 
-9`45`` #### Passar propriedades pelo CSS
+#### Passar propriedades através do CSS
+
+9`45``
 
 No exemplo em vez de passar type="text" do SubmitButton na própria tag, pode passar por dentro do estilo.
 
-Em pages/Main/styles.js, em SubmitButton -> attrs({})
+Em pages/Main/styles.js, em SubmitButton -> attrs({ })
