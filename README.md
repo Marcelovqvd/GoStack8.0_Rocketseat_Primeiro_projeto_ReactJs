@@ -263,40 +263,6 @@ Com a api importada src/Main/index.js é possível fazer a chamada em handleSubm
 
 Agora já possível pegar as informações do repositório.
 
-## Adicionando repositórios
-
-Objetivo: Quando o usuário digitar o nome de um repositório válido, as informações do repositório vão ser buscadas na API do github e vão ser salvas no state do componente.
-
-Transformar o componente Main em formato de classe e poder torná-lo um statefull component.
-
-No state vai armazenar os dados do input conforme o usuário for preenchendo (que são os dados do novo repositório que o usuário quer adicionar) - newRepo.
-
-O valor do input terpa que ser armazenado dentro da variável newRepo.
-
-A função handleSubmit recebe um preventDefault pq ela está vinculada a um formulário e formulário dá refresh na página.
-
-#### chamar a API do github que vai retornar os dados do repositório digitado no input
-
-2`12``
-
-O endereço https://api.github.com/repos/rocketseat/unform vai retornar todas as informações do repositório
-
-#### Várias formas de se consumir a API
-
-3`12``
-
-É possível consumir a API com uso do 'fecth'. Mas na aula está usando uma biblioteca auxiliar pq o fecth não permite usar uma base_URL
-
-Biblioteca Axios
-
-    $ yarn add axios
-
-Criar src/services/api.js
-
-Com a api importada src/Main/index.js é possível fazer a chamada em handleSubmit() - usar async/await
-
-Agora já possível pegar as informações do repositório.
-
 #### Armazenar as informações
 
 6`20`` As informações serão armazenadas na função handleSubmit, no objeto const data = {}. Primeiramente só vai armazenar o nome.
