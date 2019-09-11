@@ -366,3 +366,33 @@ Agora é preciso adicionar parâmetros no path da Route em routes.js.
     <Route path="/repository/:repository" component={Repository} />
 
 Para testar, acessar src/pages/Repository/index.js e acessar o parâmetro através das propriedades que o componente recebe com a propriedade 'match'. Dentro de match tem uma outra propriedade que se chama params que é onde vão estar os parâmetros.
+
+## Carregando dados da API
+
+Buscar as informações que estão faltando dos repositórios armazenados.
+
+Vai ser usado o método componentDidMount() então será necessário usar o state para armazenar as informações buscadas na API.
+
+Transformar o componente Repository/index.js em formato de classe.
+
+O método componentDidMount() vai ser assíncrono pq vai fazer chamadas na API. Será preciso buscar dados de duas URLs diferentes - os dados do repositórios e as issues(comentários de usuários). Então serão duas chamadas à API.
+
+Dica: 2`45``
+Poderia ser feito desse modo:
+
+    const response = await api.get(`/repos/${repoName}`);
+    const response = await api.get(`/repos/${repoName}/issues`);
+
+Mas neste caso a requisição das issues não precisa aguardar a finalização da primeira. Então não faz sentido usar await. Entã o mais correto é que as duas chamadas sejam feitas ao mesmo tempo.
+
+Para isso: fazer um await Promise.all com um array com todas as promises/chamadas que quiser.
+
+O valor das promises vai ser retornado em um array. Por isso fazer a desestruturação. Para testar - console.log repository e issues.
+
+Utilizando axios, irá retornar parâmetros apenas com as issues em aberto (open) e mais 5 itens. (per_page).
+
+Estas informações serão armazenadas no state do componente para serem exibidas na página. 6`45``
+
+Para armazenar os dados é preciso criar um state. Como é um único repositório, será iniciado como objeto e não como array. As issues serão array.
+
+loading true pq o componentDidMouth vai executar assim que o compoente montar e no final, o this.setState loading = false.
