@@ -315,3 +315,16 @@ const rotate para criar a animação
 Objetivo: listar os repostiórios adicionados no state.
 
 Criar um novo componente no /Main/index.js chamado <List />. Percorrer os repositórios com o map(). Para cada repositório, retornar uma li (lembrar que o primeiro elemento que vem depois de um .map() precisa da propriedade key, onde vai ser passada uma informação única do repositório). Aqui a informação que se tem é a const data = {name: ... }
+
+## Utilizando LocalStorage
+
+Gravar os repositórios adicionados no localStorage para que não sejam perdidos quando a página for atualizada (o localSotrage é um banco de dados local do navegador).
+
+Para isso:
+
+- criar o método componentDidMount() para carregar os dados do localStorage; Usa o parse para converter a estrutura JSON para objeto em Javascript.
+
+- criar o método componentDidUpdate() para salvar os dados do localSotrage. O componentDidUpdate() consegue acessar as atualizações do state. Como as atualizações acontecem no state e não nas propriedades, usa-se underline em um dos parâmetros (\_, ... ).
+  Vai usar JSON.stringfy pq não aceita array.
+
+Para testa, adicionar respositórios e atualizar a page para ver se eles continuam armazenados nela.
