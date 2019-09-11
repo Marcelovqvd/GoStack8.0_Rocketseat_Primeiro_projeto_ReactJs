@@ -228,3 +228,118 @@ O botão SubmitButton vai ter seu estilo modificado baseado em algumas proprieda
 No exemplo em vez de passar type="text" do SubmitButton na própria tag, pode passar por dentro do estilo.
 
 Em pages/Main/styles.js, em SubmitButton -> attrs({ })
+
+## Adicionando repositórios
+
+Objetivo: Quando o usuário digitar o nome de um repositório válido, as informações do repositório vão ser buscadas na API do github e vão ser salvas no state do componente.
+
+Transformar o componente Main em formato de classe e poder torná-lo um statefull component.
+
+No state vai armazenar os dados do input conforme o usuário for preenchendo (que são os dados do novo repositório que o usuário quer adicionar) - newRepo.
+
+O valor do input terpa que ser armazenado dentro da variável newRepo.
+
+A função handleSubmit recebe um preventDefault pq ela está vinculada a um formulário e formulário dá refresh na página.
+
+#### chamar a API do github que vai retornar os dados do repositório digitado no input
+
+2`12``
+
+O endereço https://api.github.com/repos/rocketseat/unform vai retornar todas as informações do repositório
+
+#### Várias formas de se consumir a API
+
+3`12``
+
+É possível consumir a API com uso do 'fecth'. Mas na aula está usando uma biblioteca auxiliar pq o fecth não permite usar uma base_URL
+
+Biblioteca Axios
+
+    $ yarn add axios
+
+Criar src/services/api.js
+
+Com a api importada src/Main/index.js é possível fazer a chamada em handleSubmit() - usar async/await
+
+Agora já possível pegar as informações do repositório.
+
+## Adicionando repositórios
+
+Objetivo: Quando o usuário digitar o nome de um repositório válido, as informações do repositório vão ser buscadas na API do github e vão ser salvas no state do componente.
+
+Transformar o componente Main em formato de classe e poder torná-lo um statefull component.
+
+No state vai armazenar os dados do input conforme o usuário for preenchendo (que são os dados do novo repositório que o usuário quer adicionar) - newRepo.
+
+O valor do input terpa que ser armazenado dentro da variável newRepo.
+
+A função handleSubmit recebe um preventDefault pq ela está vinculada a um formulário e formulário dá refresh na página.
+
+#### chamar a API do github que vai retornar os dados do repositório digitado no input
+
+2`12``
+
+O endereço https://api.github.com/repos/rocketseat/unform vai retornar todas as informações do repositório
+
+#### Várias formas de se consumir a API
+
+3`12``
+
+É possível consumir a API com uso do 'fecth'. Mas na aula está usando uma biblioteca auxiliar pq o fecth não permite usar uma base_URL
+
+Biblioteca Axios
+
+    $ yarn add axios
+
+Criar src/services/api.js
+
+Com a api importada src/Main/index.js é possível fazer a chamada em handleSubmit() - usar async/await
+
+Agora já possível pegar as informações do repositório.
+
+#### Armazenar as informações
+
+6`20`` As informações serão armazenadas na função handleSubmit, no objeto const data = {}. Primeiramente só vai armazenar o nome.
+
+    this.setState({
+      repositories: [ ... repositories, data]
+    })
+
+Aqui, sempre que o usuário adicionar um novo repositório, ele vai manter a listagem atual de repositórios (... repositories) por causa do conceito de imutabilidade do React (então é preciso criar um novo array, baseado no array repositories que já existe no state) e adicionar as novas informações (data).
+
+Testando 8`10`` - verificar na aba React no console do chrome e procurar o Main que mostra o state com o nome do repositório.
+
+Agora já está concluído o processo de adição de um novo repositório.
+
+#### desabilitar o botão de adicionar enquanto o repositório está sendo adicionado
+
+Adicionar propriedade loading dentro do state e em handleSubmit, antes de começar a fazer a chamada da API, this.setState({ loading: true }) e loading: false no this.setState referente a quando termina este processo.
+
+Passar a propriedade loading no submitButton
+
+Agora o styled components consegue acessar a propriedade loading={loading} para mostrar o sinal de loading ou fazer qualquer outra alteração.
+
+#### Estilizar o botão SubmitButton no styles.js
+
+9`50`` estilizar o botão quando estiver disabled - &(disabled)
+
+acessar as propriedades do elemento em attrs() por meio de props, setando a propriedade disabled baseada na propriedade loading. Quando loading for true, a propriedade disabled fica true; qdo loading for false, a propriedade disabled fica false.
+
+Para testar é só adicionar um repositório novo e ver se o botão fica cinza e desabilitado durante o processo.
+
+#### colocando sinal de carregamento
+
+12`00``
+No Main, importar ícone do react-icons - faSpinner e fazer animação por dentro do styled component para a bolinha girar
+
+No JSX do Main, fazer verificação colocando spinner no lugar do ícone faPlus no SubmitButton.
+
+#### React Conditional Rendering
+
+12`43`` utilizando um ternário dentro das tags SubmitButton
+
+13`50`` efeito de girar
+
+Importar no styled components 2 propriedades - keyframes e css
+
+const rotate para criar a animação
