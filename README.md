@@ -328,3 +328,41 @@ Para isso:
   Vai usar JSON.stringfy pq não aceita array.
 
 Para testa, adicionar respositórios e atualizar a page para ver se eles continuam armazenados nela.
+
+## Navegação de rotas
+
+Quando o usuário clicar no botão detalhes vai ser levado à página de informações sobre o repositório.
+
+Não é possível utilizar um link <a href""> tradicional pq ele vai carregar a página. É necessário utilizar um link próprio do react-router-dom.
+
+    import { Link } from 'react-router-dom';
+
+E trocar a tag <a> por um <Link> no componente <List> e trocar o 'href' por 'to'. Agora o link detalhes já vai direcionar para a page Repository.
+
+#### Passando parâmetro para a URL (nome do repositório)
+
+Para isso, vai transformar a tag <Link to> em Javascript abrindo chaves.
+
+    <Link to={`/repository/${repository.name}`}>Detalhes</Link>
+
+Agora a URL já vai apresentar o nome do repositório. Para repositório facebook/react:
+
+    http://localhost:3000/repository/facebook/react
+
+A barra entre facbook e react deve ser contada seja apenas considerada como um caracter especial e não como uma barra. Para isso é preciso fazer um encode.
+
+    <Link to=  {`/repository/${encodeURIComponent(repository.name)}`}>Detalhes</Link>
+
+encodeURIComponent() é uma função do Javascript para realizar o encode.
+
+Agora a URL apresentará o seguinte código:
+
+    http://localhost:3000/repository/facebook%2Freact
+
+A barra foi substituída por %2F que é o símbolo da barra dentro de um encode.
+
+Agora é preciso adicionar parâmetros no path da Route em routes.js.
+
+    <Route path="/repository/:repository" component={Repository} />
+
+Para testar, acessar src/pages/Repository/index.js e acessar o parâmetro através das propriedades que o componente recebe com a propriedade 'match'. Dentro de match tem uma outra propriedade que se chama params que é onde vão estar os parâmetros.
