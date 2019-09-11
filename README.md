@@ -309,3 +309,9 @@ No JSX do Main, fazer verificação colocando spinner no lugar do ícone faPlus 
 Importar no styled components 2 propriedades - keyframes e css
 
 const rotate para criar a animação
+
+## Listando repositórios
+
+Objetivo: listar os repostiórios adicionados no state.
+
+Criar um novo componente no /Main/index.js chamado <List />. Percorrer os repositórios com o map(). Para cada repositório, retornar uma <li> (lembrar que o primeiro elemento que vem depois de um .map() precisa da propriedade key, onde vai ser passada uma informação única do repositório). Aqui a informação que se tem é a const data = {name: ... }
