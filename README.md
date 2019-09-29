@@ -405,6 +405,18 @@ Biblioteca PropTypes. Como é componente de classe, pode-se definir como proprie
 
 Propriedades que são enviadas ao componente como por ex 'params', que recebemos através da URL, são propriedades criadas automaticamente pelo React router dom. É necessário adicionar a parte de validação de propriedades, mesmo não sendo propriedades que criamos.
 
+## Exibindo Repositório
+
+O render() sempre para no primeiro return. Então se quiser que o return não execute, isso é possível com um if() com a propriedade 'loading'.
+
+Para estilizar vai usar o <Container> usado no componente Main. Então vai separá-lo em outra pasta para reutilizar.
+
+Criar:
+
+    src/components/Container/index.js
+
+Copiar do styles Main o export Container. Agora é só importar no arquivo que quiser.
+
 ## Lista de bibliotecas e plugins
 
 - yarn
