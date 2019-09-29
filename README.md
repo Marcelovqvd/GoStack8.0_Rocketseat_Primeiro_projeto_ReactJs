@@ -396,3 +396,23 @@ Estas informações serão armazenadas no state do componente para serem exibida
 Para armazenar os dados é preciso criar um state. Como é um único repositório, será iniciado como objeto e não como array. As issues serão array.
 
 loading true pq o componentDidMouth vai executar assim que o compoente montar e no final, o this.setState loading = false.
+
+## Definindo PropTypes
+
+    $ yarn add prop-types
+
+Biblioteca PropTypes. Como é componente de classe, pode-se definir como propriedade estática. 'static propTypes'
+
+Propriedades que são enviadas ao componente como por ex 'params', que recebemos através da URL, são propriedades criadas automaticamente pelo React router dom. É necessário adicionar a parte de validação de propriedades, mesmo não sendo propriedades que criamos.
+
+## Lista de bibliotecas e plugins
+
+- yarn
+- react-app
+- eslint
+- prettier
+- react-router-dom
+- styled-components
+- react-icons
+- axios
+- propTypes
