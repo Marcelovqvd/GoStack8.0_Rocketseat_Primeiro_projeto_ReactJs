@@ -417,6 +417,16 @@ Criar:
 
 Copiar do styles Main o export Container. Agora é só importar no arquivo que quiser.
 
+## Exibindo issues
+
+<IssueList>
+Passou o valor key como String.
+Imagem/avatar do dono do repositório.
+
+Link para direcionar o usuário para a página html da issue:
+
+    <a href={issue.html_url}>{issue.title</a>
+   
 ## Lista de bibliotecas e plugins
 
 - yarn
@@ -428,3 +438,5 @@ Copiar do styles Main o export Container. Agora é só importar no arquivo que q
 - react-icons
 - axios
 - propTypes
+
+## Aplicação finalizada
